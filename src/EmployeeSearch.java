@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class EmployeeSearch {
 
@@ -11,7 +12,16 @@ public class EmployeeSearch {
 		workers.addEmployee("terry@hcl.com");
 		workers.addEmployee("susan");
 		
-		workers.printEmployees();
+		System.out.println("Enter an email ID to search for: ");
+		Scanner scan = new Scanner(System.in);
+		String query = scan.nextLine();
+		
+		boolean foundMatch = workers.foundMatch(query);
+		if(foundMatch) {
+			System.out.println("'" + query + "': is a valid email ID.");
+		} else {
+			System.out.println("'" + query + "': is NOT a valid email ID.");
+		}
 	}
 	
 }

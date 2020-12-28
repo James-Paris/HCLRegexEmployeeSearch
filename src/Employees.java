@@ -28,4 +28,16 @@ public class Employees {
 			System.out.println((j+1) + ": " + this.emailIds[j]);
 		}
 	}
+	
+	public boolean foundMatch(String query) {
+		for (int x = 0; x < this.emailIds.length; x++) {
+			if (null == this.emailIds[x])
+				continue;
+
+			if (this.emailIds[x].equalsIgnoreCase(query)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
